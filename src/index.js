@@ -1,10 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {App} from './components/App';
+import {SearchUserPage, UserPage, MainPage, NotFoundPage} from './components/Pages';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import './index.css';
 
 
 ReactDOM.render(
-  <App/>,
+  <Router>
+    <Routes>
+      <Route path='/' element={<MainPage/>} />
+      <Route path='/search' element={<SearchUserPage/>}/>
+      <Route path='/user/:userId' element={<UserPage/>} />
+      <Route path='*' element={<NotFoundPage/>}/>
+    </Routes>
+  </Router>
+  ,
   document.getElementById('root')
 );
 

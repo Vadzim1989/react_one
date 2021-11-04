@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import { SearchBar } from './SearchBar/SearchBar';
-import { UserList } from './UserList/UserList';
-import {delay} from '../utils/delay';
-import './App.css';
+import { SearchBar } from '../SearchBar/SearchBar';
+import { UserList } from '../UserList/UserList';
+import {delay} from '../../utils/delay';
 
 
-export class App extends Component {
+export class SearchUserPage extends Component {
     state = {
         users: null,
         filteredUsers: null
