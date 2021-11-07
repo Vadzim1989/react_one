@@ -1,11 +1,22 @@
-// import {useMatch} from 'react-router-dom';
+import {useEffect} from 'react';
+import {useParams} from 'react-router-dom';
 
 export const UserPage = (props) => {
-    // let match = useMatch();
-    // console.log(match);
-    // console.log(window.location.pathname) // 54
+    const {userId} = useParams();
 
-    // fetch('reqres.in/users/v1/${54}')
+    useEffect(() => {
+        fetch(`https://reqres.in/api/users/${userId}`)
+        .then((res) => {
+            console.log(res);
+            if (res.status === 404) {
+                throw new Error(' PERSON NOT FOUND ')
+            }
+            return res.json()
+        })
+        .then((res) => { console.log(res); })
+        .catch(() => {})
+    }, []);
+   
 
-    return (<h1>UserPage</h1>)
+    return (<h1>UserPage {userId}</h1>)
 };
