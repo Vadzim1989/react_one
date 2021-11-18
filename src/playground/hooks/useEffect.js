@@ -3,7 +3,7 @@ import {useCounter} from './useCounter';
 
 export const Test = () => {
     // const [firstRender, setFirstRender] = useState(false);
-    const {count, inc, dec} = useCounter(0,1);
+    const {count, inc} = useCounter(0,1);
     const renderRef = useRef(false);
 
     useEffect(() => {
@@ -13,12 +13,17 @@ export const Test = () => {
         } else {
             console.log('USEEFFECT!');
         }
+
+        return () => {
+            console.log('clean here');
+        }
     });
 
     console.log('RENDER!');
+
     return (
         <> 
-            <div ref={renderRef}>{count}</div>
+            <div>{count}</div>
             <button onClick={inc}>+</button>
         </>
         )

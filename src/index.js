@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {SearchUserPage, UserPage, MainPage, NotFoundPage} from './components/Pages';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+// import {Example} from './playground/hooks/useCallback';
 import './index.css';
-import {TestToggler} from './playground/hooks/useEffect';
+// import {TestToggler} from './playground/hooks/useEffect';
+
 
 
 ReactDOM.render(
-  <TestToggler/>
-  ,
+  <Example/> ,
   document.getElementById('root')
 );
 
