@@ -5,11 +5,12 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 // import {Example} from './playground/hooks/useCallback';
 import './index.css';
 // import {TestToggler} from './playground/hooks/useEffect';
+import {Table} from './playground/problem/Table'
 
 
 
 ReactDOM.render(
-  <Example/> ,
+  <h1>Hello!</h1>,
   document.getElementById('root')
 );
 
